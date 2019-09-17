@@ -1,26 +1,21 @@
 import React from 'react';
-import logo from './logo.svg';
+import { Provider } from 'react-redux';
+import { Route } from 'react-router-dom';
+import { ConnectedRouter } from 'connected-react-router';
+import { store, history } from './init/store';
 import './App.css';
+import Payment from './containers/Payment';
+import ThankYou from './components/ThankYou';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    return (
+        <Provider store={store}>
+            <ConnectedRouter history={history}>
+                <Route exact path='/' component={Payment} />
+                <Route exact path='/thankyou' component={ThankYou} />
+            </ConnectedRouter>
+        </Provider>
+    );
 }
 
 export default App;
