@@ -4,7 +4,7 @@
     "private": true,
     "dependencies": {
         "acorn": "^7.0.0",
-        "axios": "0.18.0",
+        "axios": "0.21.1",
         "babel-eslint": "10.0.2",
         "connected-react-router": "6.4.0",
         "flowtype": "^2.0.0",
